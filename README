@@ -1,0 +1,20 @@
+# Bash script for maintaining ddns source rule in firewalld
+
+install bind-utils first
+
+Scrip is called followed by domain name. By default "trusted" zone is selected:
+*./update_trusted_source.sh example.com*
+
+But you can specify any other
+*./update_trusted_source.sh example.com public*
+
+Set up cron to run it
+
+How about adding more than one source? Use wrapper around this script. Create file called "domains" and append them one per line
+
+then run it with:
+*./update_trusted_source_wrapper.sh*
+
+you can specify zone as well
+
+*./update_trusted_source_wrapper.sh public*
